@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <cmath>
 
 #define PI 3.141592653589793238 
@@ -105,7 +105,9 @@ public:
 		float i = (Dr.x * Dr.x) + (Dr.y * Dr.y);
 		float p = sqrt(i);
 		float w = p * p * p;
-
+		if(w == 0.0f){
+			return 0.0f;
+		}
 		return o / w;
 	};
 
