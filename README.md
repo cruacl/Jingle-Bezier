@@ -66,12 +66,22 @@ $$
 
 ### `Curvature(t)`
 
-Returns the signed curvature of the curve.
+Returns the curvature of the curve.
 
 $$
 \kappa = \frac{x'y''-y'x''}{(x'^2+y'^2)^{3/2}}
 $$
 
+For 3D curves:
+
+$$
+\kappa =
+\frac{
+\left| B'(t) \times B''(t) \right|
+}{
+\left| B'(t) \right|^3
+}
+$$
 ---
 
 ### `Vector2D::Length()`
@@ -96,6 +106,41 @@ Zero-length vectors are handled safely.
 
 ---
 
+### `Vector3D::Length()`
+
+Returns the magnitude of a 3D vector.
+
+$$
+|v| = \sqrt{x^2+y^2+z^2}
+$$
+
+---
+
+### `Vector3D::Normalize()`
+
+Converts a 3D vector into a unit vector while preserving its direction.
+
+$$
+\hat{v} = \frac{v}{|v|}
+$$
+
+Zero-length vectors are handled safely.
+
+---
+
+### `CrossProduct()`
+
+Returns the cross product of two 3D vectors.
+
+$$
+A \times B =
+(A_yB_z-A_zB_y,\;
+A_zB_x-A_xB_z,\;
+A_xB_y-A_yB_x)
+$$
+
+---
+
 ### Control Point Access
 
 - `setP0()`, `setP1()`, `setP2()`, `setP3()` — Update individual control points.
@@ -115,7 +160,7 @@ This allows the same geometry to be used with different rendering systems — or
 
 ## Current Scope
 
-The current implementation focuses on **2D cubic Bézier curves** and their fundamental geometric properties.
+The current implementation supports **2D and 3D cubic Bézier curves** and their fundamental geometric properties.
 
 ---
 
@@ -123,7 +168,6 @@ The current implementation focuses on **2D cubic Bézier curves** and their fund
 
 Planned features for future versions:
 
-- 3D Bézier curves
 - Arc Length calculation
 - Constant-speed traversal
 - De Casteljau subdivision
