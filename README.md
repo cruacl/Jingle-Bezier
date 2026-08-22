@@ -75,13 +75,9 @@ $$
 For 3D curves:
 
 $$
-\kappa =
-\frac{
-\left| B'(t) \times B''(t) \right|
-}{
-\left| B'(t) \right|^3
-}
+\kappa = \frac{\left| B'(t) \times B''(t) \right|}{\left| B'(t) \right|^3}
 $$
+
 ---
 
 ### `Vector2D::Length()`
