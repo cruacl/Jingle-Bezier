@@ -12,12 +12,12 @@ struct point2D {
 struct vector2D {
 	float x;
 	float y;
-	float length() {
+	float length()const {
 		return sqrt(x * x + y * y);
 	}
-	vector2D normalize() {
+	vector2D normalize() const {
 		float len = length();
-		if (len == 0) {
+		if (len == 0.0f) {
 			return { 0.0f, 0.0f };
 		}
 		return{ x / len,
