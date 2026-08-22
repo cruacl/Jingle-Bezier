@@ -28,12 +28,12 @@ struct vector2D {
 
 
 
-class bezier {
+class bezier2D {
 private:
 	point2D p0, p1, p2, p3;
 
 public:
-	bezier(point2D p0, point2D p1, point2D p2, point2D p3) {
+	bezier2D(point2D p0, point2D p1, point2D p2, point2D p3) {
 	
 		 this->p0 = p0;
 		 this->p1 = p1;
